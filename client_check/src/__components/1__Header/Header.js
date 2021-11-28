@@ -5,7 +5,7 @@ function Header() {
     return (
         <div>
             <nav className="bg-dark" style={{ top:"4%" , width:"50%" ,left:"25%", zIndex:"5" ,position:"absolute" , padding:"5px" , borderRadius:"5px"}}>
-            <ul className="nav justify-content-center"  >
+            <ul className="nav justify-content-center">
                 <li className="nav-item" >
                     <Link to="/" className="nav-link active text-light" >Check</Link>
                 </li>
@@ -25,6 +25,9 @@ function Header() {
                     <i class="fas fa-search"></i>
                 </button>
             </div>
+                </li>
+                <li className="nav-item">
+                    <Link to="/cart" className="nav-link disabled" tabindex="-1" aria-disabled="true">Cart</Link>
                 </li>
             </ul>
             </nav>
