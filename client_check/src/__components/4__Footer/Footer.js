@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
@@ -43,6 +44,7 @@ function Footer() {
 
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
     <a href="https://www.linkedin.com/in/himangshu-baishya-b2406b183/">Himangshu1086.com</a>
+    <Link to="/admin"><button className='btn ml-5' style={{color:"black"}}>Admin</button></Link>
   </div>
   
 
