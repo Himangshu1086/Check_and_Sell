@@ -23,6 +23,17 @@ app.use(require('./__API/__Authentication/Auth'))
 
 
 
+// if(process.env.NODE_ENV == "production"){
+//     app.use(express.static("client_check/build"));
+
+//     app.get('/*', function(req, res) {
+//         res.sendFile(path.join(__dirname, 'client_check/build/index.html'), function(err) {
+//           if (err) {
+//             res.status(500).send(err)
+//           }
+//         })
+//       })
+// }
 
 
 
