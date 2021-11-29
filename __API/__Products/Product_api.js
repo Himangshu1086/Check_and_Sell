@@ -39,7 +39,19 @@ router.get("/getProduct" , async(req , res)=>{
 
 
 
+//GET PRODUCT DETAIL OF A PARTICULAR PRODUCT
+router.get('/productDesp' , async(req , res)=>{
 
+    const ids  = req.headers.id;
+     try{
+         const product = await Product.findById({_id:ids});
+         return res.status(200).json(product);
+     }catch(err)
+     {
+         res.status(422).json({error:"product not found !"});
+         console.log(err);
+     }
+ })
 
 
 

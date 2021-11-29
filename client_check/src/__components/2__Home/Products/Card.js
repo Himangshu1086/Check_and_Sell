@@ -1,17 +1,43 @@
-import React from 'react'
+import React , {useEffect , useState} from 'react'
+import { Link } from 'react-router-dom'
 
 function Card() {
+
+    const [ productData , setProductData] = useState({});
+    const [loading , setLoading] = useState(true);
+
+    useEffect(async ()=>{
+
+        const res = await fetch("/getProduct" , {
+        method:"GET" ,
+        headers:{
+          Accept:"application/json",
+          "Content-Type":"application/json"
+    
+        } , 
+        credentials:"include"
+      });
+      const res2 = await res.json();
+      setProductData(res2);
+      setLoading(false);
+    },[]);
+
+    
+    if(loading) return <>loading..</>
+    console.log(productData)
+    console.log("hello")
+
     return (
         <div style={{display:"flex" , flexWrap:"wrap" , justifyContent:"center"}}>
             
-            <div class="card m-2 p-2" style={{maxWidth: "540px"}}>
+            <Link to={`/product/${productData[0]._id}`}><div class="card m-2 p-2" style={{maxWidth: "540px"}}>
                 <div class="row g-0">
                     <div class="col-md-4">
                     <img
                         src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
                         alt="..."
-                        class="img-fluid rounded-start"
-                    />
+                        class="img-fluid rounded"
+                    /> 
                     </div>
                     <div class="col-md-8">
                     <div class="card-body">
@@ -27,6 +53,7 @@ function Card() {
                     </div>
                 </div>
             </div>
+            </Link>
 
 
             <div class="card m-2 p-2" style={{maxWidth: "540px"}}>

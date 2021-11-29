@@ -13,11 +13,11 @@ const logout = async()=> {
 }
 
     return (
-        <div className='container' style={{marginTop:"120px" , border:"solid 2px" , height:"80vh" , textAlign:"center"}}>
-            <Link to="/signUp"><h1>Sign Up</h1></Link><br/>
-            <Link to="/login"><h1>Sign In</h1></Link><br/>
-            <Link to="/addproducts"><h1>Add Product</h1></Link>
-            <h1 onClick={logout}>Logout</h1>
+        <div className='container shadow-lg p-3 mb-5 bg-white rounded' style={{marginTop:"120px" ,display:"flex",flexDirection:"column" , height:"80vh" , textAlign:"center"}}>
+            <Link to="/signUp"><h1 className='text-primary'>Sign Up</h1></Link>
+            <Link to="/login"><h1 className='text-primary'>Sign In</h1></Link>
+            <Link to="/addproducts" className='text-primary'><h1>Add Product</h1></Link>
+            <h1 onClick={logout} className='text-danger'>Logout</h1>
         </div>
     )
 }

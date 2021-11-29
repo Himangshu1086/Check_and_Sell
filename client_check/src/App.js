@@ -11,6 +11,7 @@ import Login from './__components/0__ADMIN/Login';
 import AddProducts from './__components/0__ADMIN/AddProducts';
 import SignUp from './__components/0__ADMIN/SignUp';
 import Admin from './__components/0__ADMIN/Admin';
+import ProductDetail from './__components/5__DynamicRoute/ProductDetail';
 
 function App() {
 
@@ -66,6 +67,9 @@ console.log(checkUser)
               <Route path="/signUp" >
                   <SignUp/>
               </Route>
+              <Route path="/product/:id">
+            <ProductDetail/>
+            </Route> 
               <Route path='/'>
             <Home/>
           </Route>
@@ -90,12 +94,12 @@ console.log(checkUser)
           <Route path='/login'>
             <Login/>
           </Route>
+          <Route path="/product/:id">
+            <ProductDetail/>
+            </Route> 
            <Route path='/'>
             <Home/>
             </Route>
-            <Route path='/'>
-            <Home/>
-          </Route>
         </Switch>
         <Footer/>
      </Router>
